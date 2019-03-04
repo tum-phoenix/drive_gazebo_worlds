@@ -58,5 +58,6 @@
   <export>
       <gazebo_ros gazebo_model_path="${prefix}"/>
       <gazebo_ros gazebo_media_path="${prefix}"/>
+      <gazebo_ros gazebo_resource_path="${prefix}"/>
   </export>
 </package>
