@@ -2143,7 +2143,7 @@
       </link>
     </model>
     
-    <model name='Sign/-35'>
+    <model name='Sign-Sign/-35'>
       <link name='link'>
         <visual name='visual'>
           <cast_shadows>1</cast_shadows>
@@ -2167,7 +2167,7 @@
       <pose frame=''>10.805000000000001 -0.55 0.0 0 0 3.141592653589793</pose>
     </model>
     
-    <model name='Sign/-38'>
+    <model name='Sign-Sign/-38'>
       <link name='link'>
         <visual name='visual'>
           <cast_shadows>1</cast_shadows>
@@ -2191,7 +2191,7 @@
       <pose frame=''>10.815000000000001 -0.55 0.0 0 0 3.141592653589793</pose>
     </model>
     
-    <model name='Sign/-41'>
+    <model name='Sign-Sign/-41'>
       <link name='link'>
         <visual name='visual'>
           <cast_shadows>1</cast_shadows>
@@ -2215,7 +2215,7 @@
       <pose frame=''>10.825000000000001 -0.55 0.0 0 0 3.141592653589793</pose>
     </model>
     
-    <model name='Sign/-46'>
+    <model name='Sign-Sign/-46'>
       <link name='link'>
         <visual name='visual'>
           <cast_shadows>1</cast_shadows>
@@ -2239,7 +2239,7 @@
       <pose frame=''>11.835 -0.55 0.0 0 0 3.141592653589793</pose>
     </model>
     
-    <model name='Sign/-58'>
+    <model name='Sign-Sign/-58'>
       <link name='link'>
         <visual name='visual'>
           <cast_shadows>1</cast_shadows>
@@ -2261,5 +2261,30 @@
         <self_collide>0</self_collide>
       </link>
       <pose frame=''>16.345 -0.55 0.0 0 0 3.141592653589793</pose>
+    </model>
+    
+    <model name='Ramp--32'>
+      <link name='link'>
+        <visual name='visual'>
+          <cast_shadows>1</cast_shadows>
+          <geometry>
+            <mesh>
+                <uri>file://meshes/Ramp.dae</uri>
+                <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+            <geometry>
+                <mesh>
+                    <uri>file://meshes/Ramp.dae</uri>
+                    <scale>0.001 0.001 0.001</scale>
+                </mesh>
+            </geometry>
+        </collision>
+        <self_collide>0</self_collide>
+      </link>
+      <pose frame=''>0.4 0.0 0.0 0 0 3.141592653589793</pose>
+      <static>true</static>
     </model>
     </world></sdf>
