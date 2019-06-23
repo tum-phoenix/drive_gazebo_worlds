@@ -1,5 +1,5 @@
 
-    material Tile/06503a51578469a08e351d02d235d47edb6b37d9fc7ef84ae4f614fb63e2a4a6
+    material Tile/4fcbe70a1070d343cc5d4538660eae90017ad28b8d114252b86669ced36441e7
     {
         technique
         {
@@ -7,7 +7,7 @@
             {
                 texture_unit
                 {
-                    texture tile-06503a51578469a08e351d02d235d47edb6b37d9fc7ef84ae4f614fb63e2a4a6.png PF_L8
+                    texture tile-4fcbe70a1070d343cc5d4538660eae90017ad28b8d114252b86669ced36441e7.png PF_L8
                     filtering anisotropic
                     max_anisotropy 16
                 }
