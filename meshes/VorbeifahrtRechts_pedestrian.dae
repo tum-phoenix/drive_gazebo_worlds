@@ -5,43 +5,75 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.79.0</authoring_tool>
     </contributor>
-    <created>2019-11-24T22:04:07</created>
-    <modified>2019-11-24T22:04:07</modified>
+    <created>2019-11-27T10:44:04</created>
+    <modified>2019-11-27T10:44:04</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
-  <library_images/>
+  <library_images>
+    <image id="Balsa_Wood_Texture_jpg" name="Balsa_Wood_Texture_jpg">
+      <init_from>Balsa_Wood_Texture.jpg</init_from>
+    </image>
+    <image id="Vorbeifahrt_rechts_png" name="Vorbeifahrt_rechts_png">
+      <init_from>Vorbeifahrt_rechts.png</init_from>
+    </image>
+  </library_images>
   <library_effects>
-    <effect id="Steel_-_Satin-effect">
+    <effect id="Balsa_Wood_Texture_jpg-effect">
       <profile_COMMON>
+        <newparam sid="Balsa_Wood_Texture_jpg-surface">
+          <surface type="2D">
+            <init_from>Balsa_Wood_Texture_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Balsa_Wood_Texture_jpg-sampler">
+          <sampler2D>
+            <source>Balsa_Wood_Texture_jpg-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
-            <emission>
-              <color sid="emission">0 0 0 1</color>
-            </emission>
-            <ambient>
-              <color sid="ambient">0 0 0 1</color>
-            </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="Balsa_Wood_Texture_jpg-sampler" texcoord="Balsa_Wood_Texture_jpg"/>
             </diffuse>
             <specular>
-              <color sid="specular">0.5 0.5 0.5 1</color>
+              <color sid="specular">0 0 0 1</color>
             </specular>
-            <shininess>
-              <float sid="shininess">50</float>
-            </shininess>
-            <index_of_refraction>
-              <float sid="index_of_refraction">1</float>
-            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Vorbeifahrt_rechts_png-effect">
+      <profile_COMMON>
+        <newparam sid="Vorbeifahrt_rechts_png-surface">
+          <surface type="2D">
+            <init_from>Vorbeifahrt_rechts_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Vorbeifahrt_rechts_png-sampler">
+          <sampler2D>
+            <source>Vorbeifahrt_rechts_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <diffuse>
+              <texture texture="Vorbeifahrt_rechts_png-sampler" texcoord="Vorbeifahrt_rechts_png"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0 0 0 1</color>
+            </specular>
           </phong>
         </technique>
       </profile_COMMON>
     </effect>
   </library_effects>
   <library_materials>
-    <material id="Steel_-_Satin-material" name="Steel_-_Satin">
-      <instance_effect url="#Steel_-_Satin-effect"/>
+    <material id="Balsa_Wood_Texture_jpg-material" name="Balsa_Wood_Texture_jpg">
+      <instance_effect url="#Balsa_Wood_Texture_jpg-effect"/>
+    </material>
+    <material id="Vorbeifahrt_rechts_png-material" name="Vorbeifahrt_rechts_png">
+      <instance_effect url="#Vorbeifahrt_rechts_png-effect"/>
     </material>
   </library_materials>
   <library_geometries>
@@ -79,7 +111,7 @@
         <vertices id="Body3-mesh-vertices">
           <input semantic="POSITION" source="#Body3-mesh-positions"/>
         </vertices>
-        <triangles material="Steel_-_Satin-material" count="240">
+        <triangles material="Balsa_Wood_Texture_jpg-material" count="240">
           <input semantic="VERTEX" source="#Body3-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Body3-mesh-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#Body3-mesh-map-0" offset="2" set="0"/>
@@ -121,7 +153,7 @@
         <vertices id="Body1-mesh-vertices">
           <input semantic="POSITION" source="#Body1-mesh-positions"/>
         </vertices>
-        <triangles material="Steel_-_Satin-material" count="340">
+        <triangles material="Balsa_Wood_Texture_jpg-material" count="340">
           <input semantic="VERTEX" source="#Body1-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Body1-mesh-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#Body1-mesh-map-0" offset="2" set="0"/>
@@ -163,7 +195,7 @@
         <vertices id="Body1_1-mesh-vertices">
           <input semantic="POSITION" source="#Body1_1-mesh-positions"/>
         </vertices>
-        <triangles material="Steel_-_Satin-material" count="228">
+        <triangles material="Vorbeifahrt_rechts_png-material" count="228">
           <input semantic="VERTEX" source="#Body1_1-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Body1_1-mesh-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#Body1_1-mesh-map-0" offset="2" set="0"/>
@@ -180,7 +212,9 @@
         <instance_geometry url="#Body3-mesh" name="Body1">
           <bind_material>
             <technique_common>
-              <instance_material symbol="Steel_-_Satin-material" target="#Steel_-_Satin-material"/>
+              <instance_material symbol="Balsa_Wood_Texture_jpg-material" target="#Balsa_Wood_Texture_jpg-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
             </technique_common>
           </bind_material>
         </instance_geometry>
@@ -190,7 +224,9 @@
         <instance_geometry url="#Body1-mesh" name="Body1_1">
           <bind_material>
             <technique_common>
-              <instance_material symbol="Steel_-_Satin-material" target="#Steel_-_Satin-material"/>
+              <instance_material symbol="Balsa_Wood_Texture_jpg-material" target="#Balsa_Wood_Texture_jpg-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
             </technique_common>
           </bind_material>
         </instance_geometry>
@@ -200,7 +236,9 @@
         <instance_geometry url="#Body1_1-mesh" name="Body1_2">
           <bind_material>
             <technique_common>
-              <instance_material symbol="Steel_-_Satin-material" target="#Steel_-_Satin-material"/>
+              <instance_material symbol="Vorbeifahrt_rechts_png-material" target="#Vorbeifahrt_rechts_png-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
             </technique_common>
           </bind_material>
         </instance_geometry>
